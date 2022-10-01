@@ -107,6 +107,7 @@ namespace HemmingCoderLib.Coders
                         }
                     }
                 }
+                resultOffset -= p;
             }
             var newLen = (int)Math.Ceiling((decimal)resultOffset / 8);
             Array.Resize(ref resultBuffer, newLen);
