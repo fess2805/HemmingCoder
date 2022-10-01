@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HemmingCoderLib", "HemmingCoderLib\HemmingCoderLib.csproj", "{BA0DDBE4-AD80-4DF8-9DB6-A0AB61F5C65B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HemmingCoderLib", "HemmingCoderLib\HemmingCoderLib.csproj", "{BA0DDBE4-AD80-4DF8-9DB6-A0AB61F5C65B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HemmingCoderConsole", "HemmingCoderConsole\HemmingCoderConsole.csproj", "{E0116469-CD9B-408B-A1D2-4759E6EA7B82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab02", "Lab02\Lab02.csproj", "{E12004E3-179C-455D-ADA6-2025D645ADAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{BA0DDBE4-AD80-4DF8-9DB6-A0AB61F5C65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA0DDBE4-AD80-4DF8-9DB6-A0AB61F5C65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA0DDBE4-AD80-4DF8-9DB6-A0AB61F5C65B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0116469-CD9B-408B-A1D2-4759E6EA7B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0116469-CD9B-408B-A1D2-4759E6EA7B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0116469-CD9B-408B-A1D2-4759E6EA7B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0116469-CD9B-408B-A1D2-4759E6EA7B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E12004E3-179C-455D-ADA6-2025D645ADAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E12004E3-179C-455D-ADA6-2025D645ADAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E12004E3-179C-455D-ADA6-2025D645ADAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E12004E3-179C-455D-ADA6-2025D645ADAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
