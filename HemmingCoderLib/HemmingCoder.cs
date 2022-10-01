@@ -1,8 +1,22 @@
-﻿namespace HemmingCoderLib
+﻿using HemmingCoderLib.Coders;
+using HemmingCoderLib.Interfaces;
+
+namespace HemmingCoderLib
 {
     public class HemmingCoder
     {
-        
+
+        public static IHemmingCoder CreateCoder(int n, int k)
+        {
+            switch (n)
+            {
+                case 6: return new HemmingCoder6_3();
+                case 7: return new HemmingCoder7_4();
+                case 9: return new HemmingCoder9_5();
+                case 11: return new HemmingCoder11_7();
+            }
+            return null;
+        }
 
         //матрицы для 4 битовой последовательности
         //генерирующая таблица 

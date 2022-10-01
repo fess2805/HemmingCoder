@@ -9,8 +9,7 @@ namespace HemmingCoderLib.Interfaces
     public interface IHemmingCoder
     {
         int[,] G { get; }
-        int[] Sindroms { get; }
-        int[,] P { get; }
+        int[] Sindroms { get; }        
         byte[] Encode(byte[] buffer);
         byte[] Decode(byte[] buffer);
     }
