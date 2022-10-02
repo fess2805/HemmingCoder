@@ -17,6 +17,7 @@ namespace HemmingCoderLib.Scramblers
 
         public byte[] Scramble(byte[] buffer)
         {
+            _registr = 58745;
             var sizeBit = buffer.Length * 8;
             var resultBuffer = new byte[buffer.Length];
             var resultOffset = 0;
@@ -36,6 +37,7 @@ namespace HemmingCoderLib.Scramblers
 
         public byte[] DeScramble(byte[] buffer)
         {
+            _registr = 58745;
             var sizeBit = buffer.Length * 8;
             var resultBuffer = new byte[buffer.Length];
             var resultOffset = 0;
@@ -44,12 +46,10 @@ namespace HemmingCoderLib.Scramblers
                 var bit = (byte)(_registr.GetBit(17)
                                 ^ _registr.GetBit(22)
                                 ^ AdditionalFunctions.GetBit(buffer, i));
-                AdditionalFunctions.SetBit(resultBuffer, resultOffset,
-                    (byte)(AdditionalFunctions.GetBit(buffer, i)
-                    ^ bit));
+                AdditionalFunctions.SetBit(resultBuffer, resultOffset, bit);
                 resultOffset++;
 
-                _registr = (ushort)(_registr << 1);
+                _registr = (uint)(_registr << 1);
                 _registr = _registr.SetBit(0, (byte)(AdditionalFunctions.GetBit(buffer, i)));
             }
             return resultBuffer;

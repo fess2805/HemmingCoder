@@ -7,7 +7,7 @@ namespace HemmingCoderLib
     public class Factory
     {
 
-        public static IHemmingCoder CreateCoder(int n, int k)
+        public static IHemmingCoder CreateCoder(int n)
         {
             switch (n)
             {
@@ -23,8 +23,8 @@ namespace HemmingCoderLib
         {
             switch (type)
             {
-                case 0: return new ADScrambler_0_14_15();
-                case 1: return new SSScrambler_0_18_23();                
+                case 0: return (IScrambler)new ADScrambler_0_14_15();
+                case 1: return (IScrambler)new SSScrambler_0_18_23();                
             }
             return null;
         }
