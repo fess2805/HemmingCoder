@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace HemmingCoderLib.Mux
 {
-    public class MatrixMux
+    public class MatrixInterleaver
     {
         private int _N;        
-        public MatrixMux(int n)
+        public MatrixInterleaver(int n)
         {
             _N = n;            
         }

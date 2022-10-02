@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HemmingCoderLib.Interfaces;
 
 namespace HemmingCoderLib.Scramblers
 {
-    public  class SSScrambler_0_18_23
+    public  class SSScrambler_0_18_23 : IScrambler
     {
         private uint _registr = 58745;
         public SSScrambler_0_18_23()
@@ -14,7 +15,7 @@ namespace HemmingCoderLib.Scramblers
 
         }
 
-        public byte[] Scr(byte[] buffer)
+        public byte[] Scramble(byte[] buffer)
         {
             var sizeBit = buffer.Length * 8;
             var resultBuffer = new byte[buffer.Length];
@@ -29,6 +30,27 @@ namespace HemmingCoderLib.Scramblers
 
                 _registr = (uint)(_registr << 1);
                 _registr = _registr.SetBit(0, bit);
+            }
+            return resultBuffer;
+        }
+
+        public byte[] DeScramble(byte[] buffer)
+        {
+            var sizeBit = buffer.Length * 8;
+            var resultBuffer = new byte[buffer.Length];
+            var resultOffset = 0;
+            for (int i = 0; i < sizeBit; i++)
+            {
+                var bit = (byte)(_registr.GetBit(17)
+                                ^ _registr.GetBit(22)
+                                ^ AdditionalFunctions.GetBit(buffer, i));
+                AdditionalFunctions.SetBit(resultBuffer, resultOffset,
+                    (byte)(AdditionalFunctions.GetBit(buffer, i)
+                    ^ bit));
+                resultOffset++;
+
+                _registr = (ushort)(_registr << 1);
+                _registr = _registr.SetBit(0, (byte)(AdditionalFunctions.GetBit(buffer, i)));
             }
             return resultBuffer;
         }

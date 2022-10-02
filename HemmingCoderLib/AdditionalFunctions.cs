@@ -22,6 +22,26 @@ namespace HemmingCoderLib
             var numberBit = offset % 8;
             buffer[numberByte] = buffer[numberByte].SetBit(numberBit, value);
         }
+
+        public static int FindCombination(byte[] buffer, byte[] combination)
+        {
+            var position = -1;
+            for(int i=0; i<buffer.Length; i++)
+            {
+                if (buffer[i] == combination[0])
+                {
+                    position = 1;
+                    for (int j = 1; j < combination.Length; j++)
+                    {
+                        if (buffer[i + j] != combination[j]) break;
+                        position++;
+                    }
+                    if (position == combination.Length) return i;
+                }
+                
+            }
+            return -1;
+        }
     }
 
     public static class AdditionalFunctionsExtension

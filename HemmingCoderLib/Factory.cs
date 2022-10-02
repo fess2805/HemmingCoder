@@ -1,9 +1,10 @@
 ﻿using HemmingCoderLib.Coders;
 using HemmingCoderLib.Interfaces;
+using HemmingCoderLib.Scramblers;
 
 namespace HemmingCoderLib
 {
-    public class HemmingCoder
+    public class Factory
     {
 
         public static IHemmingCoder CreateCoder(int n, int k)
@@ -14,6 +15,16 @@ namespace HemmingCoderLib
                 case 7: return new HemmingCoder7_4();
                 case 9: return new HemmingCoder9_5();
                 case 11: return new HemmingCoder11_7();
+            }
+            return null;
+        }
+
+        public static IScrambler CreateScrambler(int type)
+        {
+            switch (type)
+            {
+                case 0: return new ADScrambler_0_14_15();
+                case 1: return new SSScrambler_0_18_23();                
             }
             return null;
         }
