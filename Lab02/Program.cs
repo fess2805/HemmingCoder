@@ -4,6 +4,9 @@ using HemmingCoderLib;
 Console.WriteLine("Hello, World!");
 
 var buffer = new byte[1024];
+Array.Resize(ref buffer, buffer.Length + 10);
+//добавим синхрокомбинацию
+for (var i = 0; i < 10; i++) buffer[i + buffer.Length] = (byte)(i + 1);
 var coder = HemmingCoderLib.Factory.CreateCoder(7, 4);
 var mux = new HemmingCoderLib.Mux.MatrixInterleaver(3);
 var scr = HemmingCoderLib.Factory.CreateScrambler(0);
@@ -12,10 +15,7 @@ var scr = HemmingCoderLib.Factory.CreateScrambler(0);
 //закодируем пустой буфер
 buffer[0] = 5;
 var coderBuffer = coder.Encode(buffer);
-//добавим синхрокомбинацию
-var coderBufferLen = coderBuffer.Length;
-Array.Resize(ref coderBuffer, coderBuffer.Length + 10);
-for (var i = 0; i < 10; i++) coderBuffer[i + coderBufferLen] = (byte)(i + 1);
+
 //выполним перемежение и скремблирование
 var muxBuffer = mux.Mux(coderBuffer);
 var scramblerBuffer = scr.Scramble(muxBuffer);
