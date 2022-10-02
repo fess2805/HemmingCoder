@@ -11,4 +11,8 @@
     <ProjectReference Include="..\HemmingCoderLib\HemmingCoderLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Flags\" />
+  </ItemGroup>
+
 </Project>

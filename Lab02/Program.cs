@@ -7,8 +7,6 @@ var mux = new HemmingCoderLib.Mux.MatrixMux(3);
 var scr = new HemmingCoderLib.Scramblers.ADScrambler_0_14_15();
 //buffer[0] = 5;
 var coderBuffer = coder.Encode(buffer);
-var scramblerBuffer = scr.Scr(coderBuffer);
-File.WriteAllBytes("scr.dat", scramblerBuffer);
 var offset = 0;
 for (int i =0; i< coderBuffer.Length; i += 2)
 {
@@ -19,15 +17,8 @@ var coderBufferLen = coderBuffer.Length;
 Array.Resize(ref coderBuffer, coderBuffer.Length + 10);
 
 for (var i = 0; i < 10; i++) coderBuffer[i + coderBufferLen] = (byte)(i + 1);
-
-
-
-
 var muxBuffer = mux.Mux(coderBuffer);
-File.WriteAllBytes("mux.dat", muxBuffer);
-//var scramblerBuffer = scr.Scr(muxBuffer);
-//File.WriteAllBytes("scr.dat", scramblerBuffer);
-
+var scramblerBuffer = scr.Scr(muxBuffer);
 
 var demuxBuffer = mux.DeMux(muxBuffer);
 

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace HemmingCoderLib.Scramblers
 {
-    public  class SSScrambler
+    public  class SSScrambler_0_18_23
     {
         private uint _registr = 58745;
-        public SSScrambler()
+        public SSScrambler_0_18_23()
         {
 
         }
