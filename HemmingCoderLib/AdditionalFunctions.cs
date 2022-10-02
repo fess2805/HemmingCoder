@@ -38,5 +38,31 @@ namespace HemmingCoderLib
             if (@this.GetBit(offset) == value) return @this;
             return @this ^= (byte)(1 << offset);
         }
+
+        public static byte GetBit(this ushort @this, int offset)
+        {
+            if (offset > 15) return 0;
+            return (byte)((@this >> offset) & 0x01);
+        }
+
+        public static ushort SetBit(this ushort @this, int offset, byte value)
+        {
+            if (offset > 15) return @this;
+            if (@this.GetBit(offset) == value) return @this;
+            return @this ^= (byte)(1 << offset);
+        }
+
+        public static byte GetBit(this uint @this, int offset)
+        {
+            if (offset > 31) return 0;
+            return (byte)((@this >> offset) & 0x01);
+        }
+
+        public static uint SetBit(this uint @this, int offset, byte value)
+        {
+            if (offset > 31) return @this;
+            if (@this.GetBit(offset) == value) return @this;
+            return @this ^= (byte)(1 << offset);
+        }
     }
 }
